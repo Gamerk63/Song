@@ -1409,13 +1409,21 @@ stopAllMusic();
      ctx.ellipse(cx, 360, 100 + squish, 130 - squish, 0, 0, Math.PI * 2);
      ctx.fill();
 
-     // TEXT ON PANDA BODY
-    ctx.fillStyle = "#3a2a1a";        // dark, readable
-    ctx.font = "22px Arial";
-    ctx.textAlign = "center";
-    ctx.textBaseline = "middle";
-    ctx.fillText("<strong>For You 💖</strong><br>Tap or Hold", cx, 360 + squish);
+     // SOFT TEXT ON PANDA BODY (light & blended)
+     ctx.save();
+     ctx.globalAlpha = 0.55;                 // transparency
+     ctx.fillStyle = "#fff6ec";              // very light peach/cream
+     ctx.font = "20px Arial";
+     ctx.textAlign = "center";
+     ctx.textBaseline = "middle";
 
+     // soft glow to blend with body
+     ctx.shadowColor = "rgba(255,255,255,0.6)";
+     ctx.shadowBlur = 8;
+
+     ctx.fillText("Tap or Hold", cx, 360 + squish);
+     ctx.restore();
+     
      // ARMS
      ctx.fillStyle = "#e76f51";
      ctx.beginPath();
