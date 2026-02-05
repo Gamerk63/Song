@@ -1409,6 +1409,13 @@ stopAllMusic();
      ctx.ellipse(cx, 360, 100 + squish, 130 - squish, 0, 0, Math.PI * 2);
      ctx.fill();
 
+     // TEXT ON PANDA BODY
+    ctx.fillStyle = "#3a2a1a";        // dark, readable
+    ctx.font = "22px Arial";
+    ctx.textAlign = "center";
+    ctx.textBaseline = "middle";
+    ctx.fillText("<strong>For You 💖</strong><br>Tap or Hold", cx, 360 + squish);
+
      // ARMS
      ctx.fillStyle = "#e76f51";
      ctx.beginPath();
